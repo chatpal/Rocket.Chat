@@ -24,7 +24,8 @@ Package.onUse(function(api) {
 		'server/provider/index.js',
 		'server/utils/logger.js',
 		'server/utils/utils.js',
-		'server/asset/config.js'
+		'server/asset/config.js',
+		'server/query/queryBuilder.js'
 	], 'server');
 
 	api.addFiles([
@@ -38,3 +39,4 @@ Package.onUse(function(api) {
 		'client/route.js'
 	], 'client');
 });
+
