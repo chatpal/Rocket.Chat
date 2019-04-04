@@ -311,6 +311,7 @@ class ChatpalProvider extends SearchProvider {
 		if (!this.index) { return callback({ msg:'Chatpal_currently_not_active' }); }
 
 		const type = payload.resultType === 'All' ? ['message', 'user', 'room'] : ['message'];
+		const params = Object.assign({}, payload.custom);
 
 		this.index.query(
 			text,
@@ -319,7 +320,8 @@ class ChatpalProvider extends SearchProvider {
 			type,
 			payload.start || 0,
 			payload.rows || this._settings.get('PageSize'),
-			callback
+			callback,
+			params
 		);
 
 	}
